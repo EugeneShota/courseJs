@@ -29,5 +29,5 @@ for (var variable in appData.expenses) {
   }
 }
 
-alert('Ваш бюджет на день: ' + money/30 +'\nс учетом обязательных расходов: '
-+ moneyFDay/30);
+alert('Ваш бюджет на день: ' + money/30 +'\nс учетом обязательных расходов: ' +
+ moneyFDay/30);
