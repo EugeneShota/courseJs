@@ -12,7 +12,8 @@ let appData = {
 
   },
   income: [],
-  savings: false
+  savings: false,
+  manyPerDay: 0
 };
 
 let countQuestion = 2;
@@ -38,3 +39,13 @@ for (var variable in appData.expenses) {
 
 alert('Ваш бюджет на день: ' + money / 30 +
   '\nс учетом обязательных расходов: ' + moneyFDay / 30);
+
+  if(appData.manyPerDay<100){
+    console.log('malo!!!');
+  }else if (appData.manyPerDay<1000){
+    console.log('normalno!!!');
+  }else if(appData.manyPerDay>2000){
+    console.log('good, very good!!!');
+  }else {
+    console.log("ooops...what's wrong(");
+  }
