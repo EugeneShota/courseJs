@@ -18,8 +18,15 @@ let appData = {
 let countQuestion = 2;
 for (let i = 0; i < countQuestion; i++) {
   let question1 = prompt('Введите обязательную статью расходов в этом месяце');
-  let question2 = prompt('Во сколько обойдется?');
-  appData.expenses[question1] = question2;
+  question2 = prompt('Во сколько обойдется?');
+
+  if ((typeof (question1)) === 'string' && (typeof (question1)) != null &&
+    (typeof (question2)) != null && question1 != '' && question2 != '' &&
+    question1.length < 50) {
+    appData.expenses[question1] = question2;
+  } else {
+    i--;
+  }
 }
 
 let moneyFDay = money;
@@ -29,5 +36,5 @@ for (var variable in appData.expenses) {
   }
 }
 
-alert('Ваш бюджет на день: ' + money / 30 + '\nс учетом обязательных расходов: ' +
-  moneyFDay / 30);
+alert('Ваш бюджет на день: ' + money / 30 +
+  '\nс учетом обязательных расходов: ' + moneyFDay / 30);
