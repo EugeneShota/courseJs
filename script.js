@@ -21,13 +21,13 @@ for (let i = 0; i < countQuestion; i++) {
   let question1 = prompt('Введите обязательную статью расходов в этом месяце'),
     question2 = prompt('Во сколько обойдется?');
 
-  if ((typeof(question1) === 'string') && (!isNaN(question2)) &&
-    (typeof(question2) === 'string') && (question1 != '') && (question2 != '') &&
+  if ((typeof (question1) === 'string') && (!isNaN(question2)) &&
+    (typeof (question2) === 'string') && (question1 != '') && (question2 != '') &&
     (question1.length < 50)) {
-      console.log(typeof(question2));
+    console.log(typeof (question2));
     appData.expenses[question1] = question2;
   } else {
-    console.log(typeof(question2)!=null);
+    console.log(typeof (question2) != null);
     i--;
   }
 }
