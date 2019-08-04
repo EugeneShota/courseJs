@@ -27,22 +27,40 @@ for (let i = 0; i < countQuestion; i++) {
       console.log(typeof(question2));
     appData.expenses[question1] = question2;
   } else {
+    console.log(typeof(question2)!=null);
     i--;
   }
 }
 
-// while (true) {
-//   let question1 = prompt('Введите обязательную статью расходов в этом месяце');
-//   question2 = prompt('Во сколько обойдется?');
-
-//   if ((typeof (question1)) === 'string' && (typeof (question1)) != null &&
-//     (typeof (question2)) != null && question1 != '' && question2 != '' &&
-//     question1.length < 50) {
+// while (countQuestion > 0) {
+//   let question1 = prompt('Введите обязательную статью расходов в этом месяце'),
+//     question2 = prompt('Во сколько обойдется?');
+//   countQuestion--;
+//   if ((typeof (question1) === 'string') && (!isNaN(question2)) &&
+//     (typeof (question2) === 'string') && (question1 != '') && (question2 != '') &&
+//     (question1.length < 50)) {
+//     console.log(typeof (question2));
 //     appData.expenses[question1] = question2;
 //   } else {
-//     i--;
+//     console.log(typeof (question2) != null);
+//     countQuestion++;
 //   }
 // }
+
+// do {
+//   let question1 = prompt('Введите обязательную статью расходов в этом месяце'),
+//     question2 = prompt('Во сколько обойдется?');
+//   countQuestion--;
+//   if ((typeof (question1) === 'string') && (!isNaN(question2)) &&
+//     (typeof (question2) === 'string') && (question1 != '') && (question2 != '') &&
+//     (question1.length < 50)) {
+//     console.log(typeof (question2));
+//     appData.expenses[question1] = question2;
+//   } else {
+//     console.log(typeof (question2) != null);
+//     countQuestion++;
+//   }
+// } while (countQuestion > 0);
 
 let moneyFDay = money;
 for (var variable in appData.expenses) {
@@ -63,3 +81,4 @@ if (appData.manyPerDay < 100) {
 } else {
   console.log("ooops...what's wrong(");
 }
+console.log(typeof (null) === null);
