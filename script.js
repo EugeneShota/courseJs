@@ -41,14 +41,14 @@ function detectLevel() {
   }
 }
 
-function chooseOptExpenses(countQuestionLocal) {
+function chooseOptExpenses(countQuestionLocal, callBdetectLevel) {
   // question4 = prompt();
   while (countQuestionLocal > 0) {
     question3 = prompt('Статья необязательных расходов?');
     if ((typeof (question3) == 'string') && (isNaN(question3)) &&
       (question3 != '')) {
       console.log('true -> countQLocal:' + countQuestionLocal);
-      appData.optionalExpenses[countQuestionLocal]=question3;
+      appData.optionalExpenses[countQuestionLocal] = question3;
     } else {
       console.log('false ^|^');
       continue;
@@ -56,6 +56,7 @@ function chooseOptExpenses(countQuestionLocal) {
     countQuestionLocal--;
     console.log('itheration -> countQLocal:' + countQuestionLocal);
   }
+  callBdetectLevel();
 }
 
 let countQuestion = 2;
@@ -74,6 +75,6 @@ for (let i = 0; i < countQuestion; i++) {
   }
 }
 detectDayBudget();
-chooseOptExpenses(3);
-detectLevel();
+chooseOptExpenses(3, detectLevel);
+// detectLevel();
 // console.log(typeof (null) === null);
